@@ -31,7 +31,6 @@ routerUser.get('/:id', (req, res) => {
 
 routerUser.post('/', (req, res) => {
     users.push(req.body)
-    console.log(users)
     res.sendStatus(200)
 });
 

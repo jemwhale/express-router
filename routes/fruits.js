@@ -23,7 +23,7 @@ let fruits = [
 
 
 routerFruits.get('/', (req, res) => {
-    res.sendStatus(fruits)
+    res.send(fruits)
 })
 
 routerFruits.get('/:id', (req, res) => {
@@ -32,7 +32,6 @@ routerFruits.get('/:id', (req, res) => {
 
 routerFruits.post('/', (req, res) => {
     fruits.push(req.body)
-    console.log(users)
     res.sendStatus(200)
 });
 
