@@ -1,5 +1,5 @@
 const express = require('express')
-const routerFruits = express.router()
+const routerUser = express.Router()
 
 // List of Fruits
 let fruits = [

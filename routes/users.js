@@ -1,5 +1,5 @@
 const express = require('express')
-const routerUser = express.router()
+const routerUser = express.Router()
 
 // List of Users
 let users = [
