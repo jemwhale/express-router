@@ -1,4 +1,4 @@
-const express = requite('express')
+const express = require('express')
 const routerUser = express.router()
 
 // List of Users
@@ -32,6 +32,16 @@ routerUser.get('/:id', (req, res) => {
 routerUser.post('/', (req, res) => {
     users.push(req.body)
     console.log(users)
+    res.sendStatus(200)
+});
+
+routerUser.put('/:id', (req, res) => {
+    users[req.params.id] = req.body
+    res.sendStatus(200)
+});
+
+routerUser.delete('/:id', (req, res) => {
+    users.splice([req.params.id], 1)
     res.sendStatus(200)
 });
 

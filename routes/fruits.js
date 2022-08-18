@@ -1,4 +1,4 @@
-const express = requite('express')
+const express = require('express')
 const routerFruits = express.router()
 
 // List of Fruits
@@ -28,6 +28,22 @@ routerFruits.get('/', (req, res) => {
 
 routerFruits.get('/:id', (req, res) => {
     res.send(fruits[req.params.id])
+});
+
+routerFruits.post('/', (req, res) => {
+    fruits.push(req.body)
+    console.log(users)
+    res.sendStatus(200)
+});
+
+routerFruits.put('/:id', (req, res) => {
+    fruits[req.params.id] = req.body
+    res.sendStatus(200)
+});
+
+routerFruits.delete('/:id', (req, res) => {
+    fruits.splice([req.params.id], 1)
+    res.sendStatus(200)
 });
 
 module.exports = routerFruits
