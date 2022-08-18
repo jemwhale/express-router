@@ -30,7 +30,7 @@ routerUser.get('/:id', (req, res) => {
     res.send(users[req.params.id])
 });
 
-routerUser.post('/', [check('name').not().isEmpty().trim()],(req,res) => {
+routerUser.post('/', [check('name').not().trim().isEmpty()],(req,res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()){
         return res.status(400).send({error: errors.array()}) 

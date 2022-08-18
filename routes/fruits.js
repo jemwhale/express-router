@@ -31,7 +31,7 @@ routerFruits.get('/:id', (req, res) => {
     res.send(fruits[req.params.id])
 });
 
-routerFruits.post('/', [check('color').not().isEmpty().trim()],(req,res) => {
+routerFruits.post('/', [check('color').not().trim().isEmpty()],(req,res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()){
         return res.status(400).send({error: errors.array()}) 
